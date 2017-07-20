@@ -446,7 +446,15 @@ GridEditor.prototype.bindRowInputEvents = function (task, taskRow) {
           break;
 
         case 9: //tab
+          if (event.shiftKey) {
+            self.master.outdentCurrentTask();
+          } else {
+            self.master.indentCurrentTask();
+          }
+          break;
+
         case 13: //enter
+          self.master.addBelowCurrentTask();
           break;
       }
     }

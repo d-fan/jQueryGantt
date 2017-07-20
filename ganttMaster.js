@@ -382,7 +382,7 @@ GanttMaster.prototype.addTask = function (task, row) {
     this.gantt.addTask(task);
   }
 
-//trigger addedTask event 
+//trigger addedTask event
   $(this.element).trigger("addedTask.gantt", task);
   return ret;
 };
@@ -936,7 +936,7 @@ GanttMaster.prototype.addBelowCurrentTask = function () {
   var ch;
   var row = 0;
   if (self.currentTask && self.currentTask.name) {
-    ch = factory.build("tmp_" + new Date().getTime(), "", "", self.currentTask.level + 1, self.currentTask.start, 1);
+    ch = factory.build("tmp_" + new Date().getTime(), "", "", self.currentTask.level, self.currentTask.start, 1);
     row = self.currentTask.getRow() + 1;
 
     if (row>0) {
